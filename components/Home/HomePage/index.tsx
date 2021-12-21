@@ -1,19 +1,16 @@
 import React from 'react';
 import {
   SafeAreaView,
-  StyleSheet,
+  Text,
 } from 'react-native';
 
-const App = () => {
+import NavBar from '../Navbar';
+
+const HomePage = () => {
 
   return (
-    <SafeAreaView>
-      
-      {/* <Navbar />*/}
-      
-
-    </SafeAreaView>
+    <NavBar/>
   );
 };
 
-export default App;
+export default HomePage;
