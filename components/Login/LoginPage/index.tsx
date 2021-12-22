@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -15,11 +15,14 @@ interface props{
 
 const App = ({navigation}:props) => {
 
+  const [login,setLogin] = useState<string>('');
+  const [password,setPassword] = useState<string>('');
+   
   return (
     <SafeAreaView>
       
-      <Input title={'Login'}/>
-      <Input title={'Senha'}/>
+      <Input title={login} setTitle={setLogin} placeHolder="Login"/>
+      <Input title={password} setTitle={setPassword} placeHolder="Password"/>
       <Button navigation={navigation} name={'Login'}/>
 
     </SafeAreaView>

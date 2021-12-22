@@ -4,17 +4,20 @@ import {
   TextInput,
   Text,
 } from 'react-native';
+import { Dispatch, SetStateAction } from "react";
 
 interface props{
-    title:String;
+    title:string;
+    placeHolder: string;
+    setTitle?: Dispatch<SetStateAction<string>>;
 } 
 
-const Input = ({title}: props) => {
+const Input = ({title,setTitle,placeHolder}: props) => {
 
   return (
-  <TextInput>
-    <Text>{title}</Text>
-  </TextInput>
+    <>
+      <TextInput value={title} onChangeText={setTitle} placeholder={placeHolder}/>
+    </>
   );
 }
 
