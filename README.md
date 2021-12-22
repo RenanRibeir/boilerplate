@@ -22,7 +22,7 @@ sudo apt-get install openjdk-11-jdk
 
 #### clone o repositorio 
 
-$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+$ git clone https://github.com/RenanRibeir/boilerplate.git
 
 #### Instalar dependencias
 
