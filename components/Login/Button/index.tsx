@@ -4,6 +4,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
+import style from './style';
 
 interface props{
     name:String;
@@ -13,8 +14,8 @@ interface props{
 const Button = ({navigation,name}: props) => {
 
   return(
-    <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-      <Text>Login</Text>
+    <TouchableOpacity style={style.button} onPress={() => navigation.navigate('Home')}>
+      <Text>{name}</Text>
     </TouchableOpacity>
   );
 }

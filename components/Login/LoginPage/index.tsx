@@ -8,6 +8,7 @@ import Input from '../Input';
 import Button from '../Button';
 
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
+import style from './style';
 
 interface props{
     navigation:NavigationProp<ParamListBase>;
@@ -19,7 +20,7 @@ const App = ({navigation}:props) => {
   const [password,setPassword] = useState<string>('');
    
   return (
-    <SafeAreaView>
+    <SafeAreaView style={style.container}>
       
       <Input title={login} setTitle={setLogin} placeHolder="Login"/>
       <Input title={password} setTitle={setPassword} placeHolder="Password"/>
