@@ -1,43 +1,44 @@
-import React, {createContext, Dispatch, ReactNode, useContext, useEffect, useState} from 'react';
+import React, {
+  createContext,
+  Dispatch,
+  ReactNode,
+  useContext,
+  useState,
+} from 'react';
 
-type ContextValue={
-  login: string,
-  setLogin: Dispatch<React.SetStateAction<string>>,
-  password: string,
+type ContextValue = {
+  login: string;
+  setLogin: Dispatch<React.SetStateAction<string>>;
+  password: string;
 };
 
-export const AppContext = createContext<ContextValue>({login: 'default',password: ' ',setLogin: () => null})
+export const AppContext = createContext<ContextValue>({
+  login: 'default',
+  password: ' ',
+  setLogin: () => null,
+});
 
-type Props ={
+type Props = {
   children: ReactNode;
-}
+};
 
-export default function UserProvider(props:Props) {
-
+export default function UserProvider(props: Props) {
   const {children} = props;
-  
-  const [login,setLogin] = useState('');
-  const [password,setPassword] = useState(' ');
+
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState(' ');
 
   const value = {
     login,
     setLogin,
     password,
-    setPassword
+    setPassword,
   };
- 
-  return (
-    <AppContext.Provider value={value}>
-      {children}
-    </AppContext.Provider>
-  );
+
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
 
-export function useUser(){
-
+export function useUser() {
   const context = useContext(AppContext);
   return context;
 }
-
-
-

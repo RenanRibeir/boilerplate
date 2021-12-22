@@ -1,14 +1,12 @@
-import { StyleSheet } from 'react-native';
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-
-  input: {    
+  input: {
     width: '80%',
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 10,
     borderWidth: 1,
-    color: '#000'
+    color: '#000',
   },
-
 });

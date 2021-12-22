@@ -1,19 +1,14 @@
-import React, { useState } from 'react';
-import {
-  Text,
-} from 'react-native';
-import UserProvider, { useUser } from '../../../context/user';
+import React from 'react';
+import {Text} from 'react-native';
+import UserProvider, {useUser} from '../../../context/user';
 
 const App = () => {
-
-  const { login } = useUser();
+  const {login} = useUser();
 
   return (
     <UserProvider>
-      
       {/* <Navbar />*/}
       <Text style={{color: '#000'}}>Login user: {login}</Text>
-
     </UserProvider>
   );
 };
