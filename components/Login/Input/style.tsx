@@ -8,6 +8,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 10,
     borderWidth: 1,
+    color: '#000'
   },
 
 });
