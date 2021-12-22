@@ -7,14 +7,20 @@ import {
 import Input from '../Input';
 import Button from '../Button';
 
-const App = () => {
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
+
+interface props{
+    navigation:NavigationProp<ParamListBase>;
+} 
+
+const App = ({navigation}:props) => {
 
   return (
     <SafeAreaView>
       
       <Input title={'Login'}/>
       <Input title={'Senha'}/>
-      <Button name={'Login'}/>
+      <Button navigation={navigation} name={'Login'}/>
 
     </SafeAreaView>
   );

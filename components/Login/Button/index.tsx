@@ -3,15 +3,17 @@ import {
   Text,
   TouchableOpacity,
 } from 'react-native';
+import {NavigationProp, ParamListBase} from '@react-navigation/native';
 
 interface props{
     name:String;
+    navigation:NavigationProp<ParamListBase>;
 } 
 
-const Button = ({name}: props) => {
+const Button = ({navigation,name}: props) => {
 
   return(
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => navigation.navigate('Home')}>
       <Text>Login</Text>
     </TouchableOpacity>
   );

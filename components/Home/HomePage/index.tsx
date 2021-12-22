@@ -2,6 +2,7 @@ import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
+  Text,
 } from 'react-native';
 
 const App = () => {
@@ -10,7 +11,7 @@ const App = () => {
     <SafeAreaView>
       
       {/* <Navbar />*/}
-      
+      <Text>Home page</Text>
 
     </SafeAreaView>
   );
