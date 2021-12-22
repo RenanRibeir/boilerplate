@@ -9,12 +9,13 @@ import style from './style';
 interface props{
     name:String;
     navigation:NavigationProp<ParamListBase>;
+    onPress: () => void;
 } 
 
-const Button = ({navigation,name}: props) => {
+const Button = ({navigation,name,onPress}: props) => {
 
   return(
-    <TouchableOpacity style={style.button} onPress={() => navigation.navigate('Home')}>
+    <TouchableOpacity style={style.button} onPress={onPress}>
       <Text>{name}</Text>
     </TouchableOpacity>
   );
