@@ -1,32 +1,18 @@
-import React, {
-  createContext,
-  Dispatch,
-  ReactNode,
-  useContext,
-  useState,
-} from 'react';
+import React, {createContext, useState} from 'react';
+import {ContextValue} from '../data/data';
 
-type ContextValue = {
-  login: string;
-  setLogin: Dispatch<React.SetStateAction<string>>;
-  password: string;
-};
+export const AppContext = createContext<ContextValue>({} as ContextValue);
 
-export const AppContext = createContext<ContextValue>({
-  login: 'default',
-  password: ' ',
-  setLogin: () => null,
-});
+const UserProvider = ({children}: any) => {
+  const [password, setPassword] = useState<string>('');
+  const [login, setLogin] = useState<string>('');
 
-type Props = {
-  children: ReactNode;
-};
+  // -- teste de função sem usar hooks
+  // let x = ' ';
 
-export default function UserProvider(props: Props) {
-  const {children} = props;
-
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState(' ');
+  // function setX(text: string) {
+  //   x = text;
+  // }
 
   const value = {
     login,
@@ -36,9 +22,6 @@ export default function UserProvider(props: Props) {
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
-}
+};
 
-export function useUser() {
-  const context = useContext(AppContext);
-  return context;
-}
+export default UserProvider;

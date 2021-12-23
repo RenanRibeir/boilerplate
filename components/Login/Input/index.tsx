@@ -1,12 +1,11 @@
 import React from 'react';
 import {TextInput} from 'react-native';
-import {Dispatch, SetStateAction} from 'react';
 import style from './style';
 
 interface props {
   title: string;
   placeHolder: string;
-  setTitle?: Dispatch<SetStateAction<string>>;
+  setTitle(text: string): void;
 }
 
 const Input = ({title, setTitle, placeHolder}: props) => {
@@ -15,7 +14,7 @@ const Input = ({title, setTitle, placeHolder}: props) => {
       <TextInput
         style={style.input}
         value={title}
-        onChangeText={setTitle}
+        onChangeText={(text: string) => setTitle(text)}
         placeholder={placeHolder}
         placeholderTextColor="#000"
       />

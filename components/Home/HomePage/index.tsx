@@ -1,15 +1,17 @@
 import React from 'react';
-import {Text} from 'react-native';
-import UserProvider, {useUser} from '../../../context/user';
+import {SafeAreaView, Text} from 'react-native';
+import useUser from '../../../context/useUser';
+import style from '../../Home/HomePage/style';
 
 const App = () => {
   const {login} = useUser();
 
+  console.log(login);
+
   return (
-    <UserProvider>
-      {/* <Navbar />*/}
-      <Text style={{color: '#000'}}>Login user: {login}</Text>
-    </UserProvider>
+    <SafeAreaView>
+      <Text style={style.text}>Login user: {login}</Text>
+    </SafeAreaView>
   );
 };
 

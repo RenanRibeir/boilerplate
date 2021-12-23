@@ -3,6 +3,13 @@ export interface user {
   password: String;
 }
 
+export interface ContextValue {
+  login: string;
+  setLogin(state: string): void;
+  password: string;
+  setPassword(state: string): void;
+}
+
 export const users: user[] = [
   {
     login: 'user1',

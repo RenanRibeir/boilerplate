@@ -7,4 +7,23 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input: {
+    width: '80%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 10,
+    borderWidth: 1,
+    color: '#000',
+  },
+  button: {
+    color: '#fff',
+    backgroundColor: '#000',
+    width: '80%',
+    height: '7%',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    color: '#fff',
+  },
 });

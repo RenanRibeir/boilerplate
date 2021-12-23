@@ -10,7 +10,7 @@ interface props {
 const Button = ({name, onPress}: props) => {
   return (
     <TouchableOpacity style={style.button} onPress={onPress}>
-      <Text>{name}</Text>
+      <Text style={style.text}>{name}</Text>
     </TouchableOpacity>
   );
 };
