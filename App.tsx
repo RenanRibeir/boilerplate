@@ -1,10 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-
-import Login from './components/Login/LoginPage';
-import Home from './components/Home/HomePage';
-import UserProvider from './context/user';
+import UserProvider from './src/context/user';
+import Login from './src/pages/LoginPage';
+import Home from './src/pages/HomePage';
 
 const Stack = createNativeStackNavigator();
 export default function Routes() {

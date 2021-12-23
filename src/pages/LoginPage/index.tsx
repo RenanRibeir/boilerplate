@@ -10,7 +10,7 @@ import {
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import style from './style';
 import {user, users} from '../../../data/data';
-import useUser from '../../../context/useUser';
+import useUser from '../../context/useUser';
 
 interface props {
   navigation: NavigationProp<ParamListBase>;
