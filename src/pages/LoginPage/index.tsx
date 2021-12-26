@@ -9,8 +9,9 @@ import {
 
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import style from './style';
-import {user, users} from '../../../data/data';
 import useUser from '../../context/useUser';
+import userService from '../../services/UserService';
+import user from '../../context/user';
 
 interface props {
   navigation: NavigationProp<ParamListBase>;
@@ -19,24 +20,12 @@ interface props {
 const App = ({navigation}: props) => {
   const {login, setLogin, password, setPassword} = useUser();
 
-  const auth = () => {
-    const search = users.find((element: user) => element.login === login);
+  function Login(){
+    const response = userService.auth({login: login,password: password});
 
-    if (
-      search?.login === login &&
-      password ===
-        users.find((element: user) => element.password === password)?.password
-    ) {
-      navigation.navigate('Home');
-    } else {
-      Alert.alert('Error', 'Login or Password incorrect');
-    }
-  };
+    response?navigation.navigate('Home'): Alert.alert('Error', 'Login or Password incorrect');;
 
-  useEffect(() => {
-    console.log(login);
-    console.log(password);
-  }, [login, password]);
+  }
 
   return (
     <SafeAreaView style={style.container}>
@@ -56,7 +45,7 @@ const App = ({navigation}: props) => {
         placeholderTextColor="#000"
       />
 
-      <TouchableOpacity style={style.button} onPress={auth}>
+      <TouchableOpacity style={style.button} onPress={Login}>
         <Text style={style.text}>Login</Text>
       </TouchableOpacity>
     </SafeAreaView>
