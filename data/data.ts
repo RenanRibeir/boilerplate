@@ -8,6 +8,7 @@ export interface ContextValue {
   setLogin(state: string): void;
   password: string;
   setPassword(state: string): void;
+  auth: (e: user) => boolean;
 }
 
 export const users: user[] = [

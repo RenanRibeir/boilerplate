@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {
   Alert,
   SafeAreaView,
@@ -10,21 +10,20 @@ import {
 import {NavigationProp, ParamListBase} from '@react-navigation/native';
 import style from './style';
 import useUser from '../../context/useUser';
-import userService from '../../services/UserService';
-import user from '../../context/user';
 
 interface props {
   navigation: NavigationProp<ParamListBase>;
 }
 
 const App = ({navigation}: props) => {
-  const {login, setLogin, password, setPassword} = useUser();
+  const {login, setLogin, password, setPassword, auth} = useUser();
 
-  function Login(){
-    const response = userService.auth({login: login,password: password});
+  function Login() {
+    const response = auth({login: login, password: password});
 
-    response?navigation.navigate('Home'): Alert.alert('Error', 'Login or Password incorrect');;
-
+    response
+      ? navigation.navigate('Home')
+      : Alert.alert('Error', 'Login or Password incorrect');
   }
 
   return (
